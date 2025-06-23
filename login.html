@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💖 Anniversary Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>welcome to our love story!</h1>
+    <p>enter into this secret website!</p>
+
+    <form onsubmit="return validateLogin()">
+      <input type="text" id="username" placeholder="Username" required /><br><br>
+      <input type="password" id="password" placeholder="Password" required /><br><br>
+      <button type="submit">enter 💖</button>
+    </form>
+
+    <p id="error-message" class="error"></p>
+  </div>
+
+  <script>
+    function validateLogin() {
+      const username = document.getElementById("username").value.trim().toLowerCase();
+      const password = document.getElementById("password").value;
+
+      // 🎯 Replace these with your secret credentials
+      const correctUsername = "siumai";
+      const correctPassword = "ilovenicoldsomuch";
+
+      if (username === correctUsername && password === correctPassword) {
+        window.location.href = "index.html"; // ✅ Redirect to main page
+        return false;
+      } else {
+        document.getElementById("error-message").textContent = "Oops! Too bad! Try again.";
+        return false; // Prevent form from submitting
+      }
+    }
+  </script>
+</body>
+</html>
